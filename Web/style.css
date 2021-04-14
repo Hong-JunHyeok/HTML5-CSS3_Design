@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* 기본 색상 */
+:root {
+  --main-color: #5d9ab2;
+  --accent-color: #bf6a7a;
+  --dark-main-color: #2b5566;
+  --text-bright-color: #fff;
+}
+
+/* 기본 설정 : 페이지 전체 */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.conA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 450px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(img/main.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--dark-main-color);
+  color : var(--text-bright-color);
+  text-align: center;
+}
+
+.conA p{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.conA a{
+    display: inline-block;
+    margin-top: 20px;
+    padding : 10px 30px;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color : var(--text-bright-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.conA a:hover{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.2)
+    );
+}
+
+@media (min-height: 768px){
+    .conA h1{
+        font-size: 115px;
+    }
+
+    .conA p {
+        font-size: 24px;
+    }
+}
