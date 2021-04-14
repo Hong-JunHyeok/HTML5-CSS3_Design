@@ -124,3 +124,31 @@ background-image : linear-gradient(
 `linear-gradient`라는 속성을 사용하면 사용 가능하다.
 
 - ## 개요
+![image](https://user-images.githubusercontent.com/48292190/114669311-b4b08d00-9d3c-11eb-867a-9d05fbae1a81.png)
+
+## FontAwesome을 사용해서 아이콘 사용해보기
+**FontAwesome**이라는 서비스는 손쉽게 다양한 아이콘들을 쓸 수있게 해주는 폰트 제공 서비스이다. 
+> **어떻게 FontAwesome을 사용하나요?**
+FontAwesome 웹사이트에 들어가셔서 절차에 따라서 이메일을 받고 그 이메일에서 받은 주소를 script src에 넣어주기만 하면 바로 FontAwesome을 사용할 준비가 된 것이다. (자세한 사항은 구글링...)
+
+이때 ,아이콘은 **폰트**이기 때문에 크기를 조절할려면 폰트 크기를 조절해야 된다. `font-size`
+
+### 미디어 쿼리를 사용하여 레이아웃 변경해보기
+
+전 장에서 다루었던 미디어 쿼리를 사용해서 레이아웃을 변경할 수 있다.
+```css
+@media (min-width: 768px){
+    .conB .container{
+        display: flex;
+        max-width: var(--large-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .conB .text{
+        flex : 1;
+    }
+}
+```
+768px이상으로으로 화면의 너비가 넓어지면 레이아웃을 flex로 바꿔주는 작업을 하는 것이다.
+

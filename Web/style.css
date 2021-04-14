@@ -7,8 +7,9 @@
   --dark-main-color: #2b5566;
   --text-bright-color: #fff;
   --icon-color: #fff;
-  --icon-bk-color : #ddd;
-  --large-width : 1000px;
+  --icon-bk-color: #ddd;
+  --large-width: 1000px;
+  --purple-color : #906CFC;
 }
 
 /* 기본 설정 : 페이지 전체 */
@@ -93,36 +94,129 @@ body {
   opacity: 0.8;
 }
 
-.conB a{
-    color : var(--main-color);
-    text-decoration: none;
+.conB a {
+  color: var(--main-color);
+  text-decoration: none;
 }
 
-.conB a:hover{
-    text-decoration: underline;
+.conB a:hover {
+  text-decoration: underline;
 }
 
-.conB .icon{
-    display : inline-block;
-    margin-bottom: 20px;
-    font-size: 40px;
-    width: 2em;
-    line-height: 2em;
-    border-radius: 50%;
-    text-align: center;
-    background-color: var(--icon-bk-color);
-    color: var(--icon-color);
+.conB .icon {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 40px;
+  width: 2em;
+  line-height: 2em;
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--icon-bk-color);
+  color: var(--icon-color);
 }
 
-@media (min-width: 768px){
-    .conB .container{
-        display: flex;
-        max-width: var(--large-width);
-        margin-left: auto;
-        margin-right: auto;
-    }
+@media (min-width: 768px) {
+  .conB .container {
+    display: flex;
+    max-width: var(--large-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .conB .text{
-        flex : 1;
-    }
+  .conB .text {
+    flex: 1;
+  }
+}
+
+.conC {
+  background-color: var(--main-color);
+  color: var(--text-bright-color);
+}
+
+.conC .text {
+  padding: 20px;
+}
+.conC h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.conC p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.conC .photo {
+  min-height: 300px;
+  background-image: url(img/content_2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .conC .container {
+    display: flex;
+    max-width: var(--large-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .conC .photo {
+    flex: 3;
+  }
+  .conC .text {
+    flex: 2;
+    padding: 50px;
+  }
+}
+
+.conD {
+    color : var(--text-bright-color);
+    background-color: var(--purple-color);
+}
+
+.conD .text {
+  padding: 20px;
+}
+.conD h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.conD p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.conD .photo {
+  min-height: 300px;
+  background-image: url(img/main.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .conD .container {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: var(--large-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .conD .photo{
+      flex : 0 0 400px;
+  }
+  .conD .text{
+      flex : 1;
+      padding : 50px;
+  }
 }
