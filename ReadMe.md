@@ -170,3 +170,10 @@ FontAwesome 웹사이트에 들어가셔서 절차에 따라서 이메일을 받
 푸터에 더 많은 기능을 부여하기 위해 푸터 메뉴를 추가할려고 한다.
 이 푸터 메뉴도 당연히 반응형으로 디자인할려고 하며, `브레이크포인트는 (768px)`로 줄려고 한다.
 
+**화면길이가 768px 이상일때**
+![image](https://user-images.githubusercontent.com/48292190/114716604-2c97ab00-9d6f-11eb-95a2-0a6b5900720a.png)
+
+**화면길이가 768px 미만일때**
+![image](https://user-images.githubusercontent.com/48292190/114716645-36b9a980-9d6f-11eb-82b1-b20c48f760bb.png)
+
+`flex`속성은 일종의 비율을 구현할 수 있게 해준다. 각 Div마다 flex : 1을 줘서 `1 : 1 : 1`을 구성하게 구현했다
