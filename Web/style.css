@@ -175,8 +175,8 @@ body {
 }
 
 .conD {
-    color : var(--text-bright-color);
-    background-color: var(--purple-color);
+    /* color : var(--text-bright-color); */
+    /* background-color: var(--purple-color); */
     margin:  40px 0;
 }
 
@@ -199,7 +199,7 @@ body {
 
 .conD .photo {
   min-height: 300px;
-  background-image: url(img/main.jpg);
+  background-image: url(img/content_3.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -250,3 +250,44 @@ footer .container{
   text-decoration: none;
 }
 
+.footA{
+  margin-bottom: 30px;
+}
+.footB div{
+  margin-bottom: 20px;
+}
+.footB h3{
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid currentColor;
+  font-size: 14px;
+}
+
+.footB ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footB a {
+  display: block;
+  padding : 5px;
+  color : inherit;
+  font-size: 12px;
+  text-decoration : none;
+}
+.footB a:hover{
+  background-color: rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px){
+  .footB{
+    display: flex;
+  }
+
+  .footB div{
+    flex : 1;
+  }
+  .footB div:not(:first-child){
+    margin-left: 40px;
+  }
+}
