@@ -9,7 +9,7 @@
   --icon-color: #fff;
   --icon-bk-color: #ddd;
   --large-width: 1000px;
-  --purple-color : #906CFC;
+  --purple-color : #a388f3;
 }
 
 /* 기본 설정 : 페이지 전체 */
@@ -177,10 +177,11 @@ body {
 .conD {
     color : var(--text-bright-color);
     background-color: var(--purple-color);
+    margin:  40px 0;
 }
 
 .conD .text {
-  padding: 20px;
+  margin-top: 10px;
 }
 .conD h2 {
   margin-top: 0;
@@ -220,3 +221,32 @@ body {
       padding : 50px;
   }
 }
+
+/* 푸터 */
+
+footer{
+  color : var(--text-bright-color);
+  background-color: var(--dark-main-color);
+}
+
+footer .container{
+  padding : 40px 20px;
+}
+
+.footA h2{
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.footA p{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.footA a{
+  color : var(--accent-color);
+  text-decoration: none;
+}
+
