@@ -76,7 +76,7 @@
 
 ## 최상위 페이지 만들기
 
-### 히어로 이미지 
+- ## 히어로 이미지 
 페이지에 아주 크게 표시되는 이미지 요소를 의미함. 
 ![image](https://user-images.githubusercontent.com/48292190/114636634-6b434c00-9d02-11eb-934c-f870397f7e63.png)
 (헤더 이미지, 라지 헤더 등으로도 불림)
@@ -123,3 +123,4 @@ background-image : linear-gradient(
 ![image](https://user-images.githubusercontent.com/48292190/114655064-67292580-9d26-11eb-9c41-c7b23bd94f58.png)
 `linear-gradient`라는 속성을 사용하면 사용 가능하다.
 
+- ## 개요

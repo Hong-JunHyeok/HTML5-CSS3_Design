@@ -6,6 +6,9 @@
   --accent-color: #bf6a7a;
   --dark-main-color: #2b5566;
   --text-bright-color: #fff;
+  --icon-color: #fff;
+  --icon-bk-color : #ddd;
+  --large-width : 1000px;
 }
 
 /* 기본 설정 : 페이지 전체 */
@@ -26,40 +29,100 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: var(--dark-main-color);
-  color : var(--text-bright-color);
+  color: var(--text-bright-color);
   text-align: center;
 }
 
-.conA p{
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 18px;
+.conA p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
 }
 
-.conA a{
-    display: inline-block;
-    margin-top: 20px;
-    padding : 10px 30px;
-    border-radius: 6px;
-    background-color: var(--accent-color);
-    color : var(--text-bright-color);
-    font-size: 14px;
+.conA a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: var(--text-bright-color);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.conA a:hover {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2)
+  );
+}
+
+@media (min-height: 768px) {
+  .conA h1 {
+    font-size: 85px;
+  }
+
+  .conA p {
+    font-size: 24px;
+  }
+}
+
+.conB .container {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.conB .text {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.conB h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.conB p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.conB a{
+    color : var(--main-color);
     text-decoration: none;
 }
 
-.conA a:hover{
-    background-image: linear-gradient(
-        rgba(255,255,255,0.2),
-        rgba(255,255,255,0.2)
-    );
+.conB a:hover{
+    text-decoration: underline;
 }
 
-@media (min-height: 768px){
-    .conA h1{
-        font-size: 85px;
+.conB .icon{
+    display : inline-block;
+    margin-bottom: 20px;
+    font-size: 40px;
+    width: 2em;
+    line-height: 2em;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--icon-bk-color);
+    color: var(--icon-color);
+}
+
+@media (min-width: 768px){
+    .conB .container{
+        display: flex;
+        max-width: var(--large-width);
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .conA p {
-        font-size: 24px;
+    .conB .text{
+        flex : 1;
     }
 }
