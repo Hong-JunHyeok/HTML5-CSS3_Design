@@ -79,3 +79,4 @@
 
 ### 히어로 이미지 
 페이지에 아주 크게 표시되는 이미지 요소를 의미함. 
+![image](https://user-images.githubusercontent.com/48292190/114636634-6b434c00-9d02-11eb-934c-f870397f7e63.png)
