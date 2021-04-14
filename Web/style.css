@@ -20,15 +20,14 @@ body {
   justify-content: center;
   height: 100vh;
   min-height: 450px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url(img/main.jpg);
-  background-position: center;
-  background-size: contain;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url(img/main_3.jpg);
+  background-position: bottom;
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: var(--dark-main-color);
   color : var(--text-bright-color);
   text-align: center;
-  letter-spacing: 10px;
 }
 
 .conA p{
