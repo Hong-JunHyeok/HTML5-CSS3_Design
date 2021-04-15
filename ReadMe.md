@@ -276,3 +276,75 @@ $(function () {
 > **빵 부스러기 리스트란?**
 서양 동화의 헨젤과 그레텔에서 다시 집으로 돌아가기 위해 빵을 조금씩 뜯어 놓아서 왔던 길을 기록하는 모습을 보고 나온 이름으로, 웹페이지에서 사용자가 방문한 페이지를 기록하는 리스트를 빵 부스러기 리스트라고 한다.
 
+### 헤더가 제목과 겹치는 상황 발생
+![image](https://user-images.githubusercontent.com/48292190/114801903-a2cff800-9dd7-11eb-84c2-a879e1ed333b.png)
+
+위의 사진처럼 헤더가 콘텐츠와 겹치는 경우가 발생한다. 이는 `position : absolute;`라는 속성 때문인데, 일차적으로 해결하기 위해서는 absolute속성을 없애줘야 한다.
+
+하지만 이렇게 되면 겹치는 문제는 없어지지만 최상위 페이지에서 문제가 생겨버리게 된다. 투명한 배경색이 사진과 겹치는 것을 유도했었는데, 최상위 페이지마저 겹치는 부분이 없어지게 되버렸다.
+
+그래서 이를 해결할려면, hero이미지가 없을때에만 `position : absolute;`를 없애줘야 한다.
+이를 한번 구현해보자.
+
+먼저 contents.html의 body에 class로 nohero를 주고 아래의 css처럼 작성해주면 된다.
+
+```css
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.nohero header{
+  position: static;
+}
+```
+
+그리고 nohero 헤더 속성에 구분선을 줘서 콘텐츠와 거리를 주도록 해보겠다.
+```css
+/* 기본 색상 */
+:root {
+  --main-color: #5d9ab2;
+  --accent-color: #bf6a7a;
+  --dark-main-color: #2b5566;
+  --text-bright-color: #fff;
+  --icon-color: #fff;
+  --icon-bk-color: #ddd;
+  --large-width: 1000px;
+  --purple-color: #a388f3;
+  --gray-color : #ddd;
+}
+
+/* 생략 */
+
+.nohero header{
+  position: static;
+  border-bottom: 1px solid var(--gray-color);
+}
+```
+
+### 기사의 간격 설정하기
+먼저 기사 주변의 여백 크기를 조정해보도록 하겠다.
+```css
+.post .container {
+  padding : 30px 10px;
+}
+```
+
+그런 다음에 max-width를 줘서 최대 길이를 주도록 하겠다.
+```css
+.post .container {
+  padding : 30px 10px;
+  max-width: var(--middle-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+그러면 최종적으로 만들어지는 모습은 이렇다.
+![image](https://user-images.githubusercontent.com/48292190/114802873-656c6a00-9dd9-11eb-8bb7-4dc75a4ad4f1.png)
+
+### 기사의 디자인 지정하기

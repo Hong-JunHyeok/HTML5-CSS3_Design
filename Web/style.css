@@ -9,7 +9,9 @@
   --icon-color: #fff;
   --icon-bk-color: #ddd;
   --large-width: 1000px;
+  --middle-width : 800px;
   --purple-color: #a388f3;
+  --gray-color : #ddd;
 }
 
 /* 기본 설정 : 페이지 전체 */
@@ -348,6 +350,11 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+.nohero header{
+  position: static;
+  border-bottom: 1px solid var(--gray-color);
+}
+
 .headA {
   display: inline-block;
   line-height: 70px;
@@ -422,4 +429,11 @@ header {
   .headB{
     display: block !important;
   }
+}
+
+.post .container {
+  padding : 30px 10px;
+  max-width: var(--middle-width);
+  margin-left: auto;
+  margin-right: auto;
 }
