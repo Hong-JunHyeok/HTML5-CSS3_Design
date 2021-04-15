@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <title>포트폴리오</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://use.fontawesome.com/926fe18a63.js"></script>
-    <title>포트폴리오</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function () {
+        $(".headC").click(function () {
+          $(".headB").slideToggle();
+        });
+      });
+    </script>
   </head>
   <body>
     <header>
-        <div class="container">
-            <a href="index.html" class="headA">Hong-JunHyeok</a>
+      <div class="container">
+        <div class="container-small">
+          <a href="index.html" class="headA">Hong-JunHyeok</a>
+
+          <button type="button" class="headC">
+            <span class="fa fa-bars" title="MENU"> </span>
+          </button>
         </div>
+        <nav class="headB">
+          <ul>
+            <li><a href="">콘텐츠</a></li>
+            <li><a href="">소개</a></li>
+            <li><a href="">문의</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <section class="conA">
       <div class="container">
