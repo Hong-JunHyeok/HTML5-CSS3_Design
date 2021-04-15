@@ -9,7 +9,7 @@
   --icon-color: #fff;
   --icon-bk-color: #ddd;
   --large-width: 1000px;
-  --purple-color : #a388f3;
+  --purple-color: #a388f3;
 }
 
 /* 기본 설정 : 페이지 전체 */
@@ -175,9 +175,9 @@ body {
 }
 
 .conD {
-    /* color : var(--text-bright-color); */
-    /* background-color: var(--purple-color); */
-    margin:  40px 0;
+  /* color : var(--text-bright-color); */
+  /* background-color: var(--purple-color); */
+  margin: 40px 0;
 }
 
 .conD .text {
@@ -213,81 +213,149 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  .conD .photo{
-      flex : 0 0 400px;
+  .conD .photo {
+    flex: 0 0 400px;
   }
-  .conD .text{
-      flex : 1;
-      padding : 50px;
+  .conD .text {
+    flex: 1;
+    padding: 50px;
   }
 }
 
 /* 푸터 */
 
-footer{
-  color : var(--text-bright-color);
+footer {
+  color: var(--text-bright-color);
   background-color: var(--dark-main-color);
 }
 
-footer .container{
-  padding : 40px 20px;
+footer .container {
+  padding: 40px 20px;
 }
 
-.footA h2{
+.footA h2 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 30px;
 }
 
-.footA p{
+.footA p {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 14px;
 }
 
-.footA a{
-  color : var(--accent-color);
+.footA a {
+  color: var(--accent-color);
   text-decoration: none;
 }
 
-.footA{
+.footA {
   margin-bottom: 30px;
 }
-.footB div{
+.footB div {
   margin-bottom: 20px;
 }
-.footB h3{
+.footB h3 {
   margin-top: 0;
   margin-bottom: 10px;
   border-bottom: 1px solid currentColor;
   font-size: 14px;
 }
 
-.footB ul{
+.footB ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .footB a {
   display: block;
-  padding : 5px;
-  color : inherit;
+  padding: 5px;
+  color: inherit;
   font-size: 12px;
-  text-decoration : none;
+  text-decoration: none;
 }
-.footB a:hover{
-  background-color: rgba(0,0,0,0.3);
+.footB a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 768px){
-  .footB{
+@media (min-width: 768px) {
+  .footB {
     display: flex;
   }
 
-  .footB div{
-    flex : 1;
+  .footB div {
+    flex: 1;
   }
-  .footB div:not(:first-child){
+  .footB div:not(:first-child) {
     margin-left: 40px;
   }
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: var(--large-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footA {
+    flex: 0 0 40%;
+  }
+  .footB {
+    flex: 0 0 100%;
+  }
+  .footC {
+    flex: 0 0 100%;
+  }
+}
+
+
+.footC {
+  font-size: 12px;
+  text-align: center;
+}
+.footD {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.footD ul{
+  display: flex;
+  margin: 0;
+  padding : 0;
+  list-style: none;
+}
+.footD a {
+  display: block;
+  margin-right: 8px;
+  padding : 0;
+  color : inherit;
+  font-size: 16px;
+  text-decoration: none;
+  border : 1px solid currentColor;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  border-radius: 50%;
+}
+.footD a:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.headA{
+  display: inline-block;
+  line-height: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--main-color);
+  color: var(--text-bright-color);
+  font-size: 24px;
+  text-decoration: none;
 }
