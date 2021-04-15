@@ -416,4 +416,30 @@ header {
 
 ### 빵 부스러기 리스트 출력
 이름이..정말 맘에 안들지만 일단 해보도록 하겠다.
+![image](https://user-images.githubusercontent.com/48292190/114808956-40c9bf80-9de4-11eb-9b57-43aba142fa3a.png)
 
+```css
+.bread ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.bread a {
+  display: block;
+  padding: 5px;
+  color: inherit;
+  font-size: 0.875px;
+  text-decoration: none;
+}
+.bread a::after {
+  margin-left: 10px;
+  content: ">";
+  font-family: "FontAwesome";
+  opacity: 0.3;
+}
+.bread a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+```
+빵 부스러기 리스트를 다 만들었으니 다음 페이지를 만들어보자.
