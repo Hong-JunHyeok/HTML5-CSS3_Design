@@ -443,3 +443,71 @@ header {
 }
 ```
 빵 부스러기 리스트를 다 만들었으니 다음 페이지를 만들어보자.
+**(책의 내용상 지금 만드는게 소개 페이지라서 바꿨습니다...)**
+
+### 소개 페이지 만들기 
+
+기존에 있던 빵 부스러기 리스트를 지우고 작업을 합니다.
+
+소개 페이지의 테이블은 `반응형`으로 작업했으며 flex레이아웃을 사용했다.
+
+```css
+.history{
+  background-color: var(--main-color);
+  color: var(--text-bright-color);
+}
+
+.history .text{
+  padding :20px;
+}
+
+.history h2{
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.history .photo{
+  min-height: 300px;
+  background-image: url(img/article_1.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+.history table{
+  border-collapse: collapse;  
+  border-top: 1px solid var(--gray-color);
+  font-size: 0.875rem;
+}
+.history th,
+.history td{
+  padding : 1.8rem 0;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.history th{
+  padding-right: 1rem;
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* 반응형 */
+@media (min-width : 768px) {
+  .history .container{
+    display: flex;
+    max-width: var(--large-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .history .photo{
+    flex : 3;
+  }
+  .history .text{
+    flex : 2;
+    padding : 50px;
+  }
+}
+
+```
+
+![image](https://user-images.githubusercontent.com/48292190/114839137-640a6400-9e10-11eb-9d47-4c23bd18e4d5.png)
