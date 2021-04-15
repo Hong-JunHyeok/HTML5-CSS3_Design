@@ -348,3 +348,68 @@ header {
 ![image](https://user-images.githubusercontent.com/48292190/114802873-656c6a00-9dd9-11eb-8bb7-4dc75a4ad4f1.png)
 
 ### 기사의 디자인 지정하기
+
+이제 우리가 할 작업은 각 디스플레이마다 폰트의 크기를 다르게 하는 작업이다.
+
+- 스마트폰 => 14px
+- 태블릿 => 16px
+- PC => 18px
+
+이런식으로 **기사의 폰트 크기**를 다르게 설정해볼려고 한다.
+우리가 배워야 할 단위는 `rem`이라는 것인데, root요쇼의 폰트 크기에 대한 비율의 단위이다.
+
+> 2rem은 root폰트 크기 x 2가 되는것이다.
+
+```css
+@media (max-width : 599px) {
+  :root{
+    font-size: 14px;
+  }
+}
+
+@media (min-width : 600px) and (max-width: 799px) {
+  :root{
+    font-size: 16px;
+  }
+}
+@media (min-width : 800px) {
+  :root{
+    font-size: 16px;
+  }
+}
+```
+미디어 쿼리를 사용해서 root폰트 크기를 변경한 것이다. 
+그리고 line-height를 조금 수정해 보도록 하자.
+
+```css
+.post h1{
+  font-size: 2rem;
+}
+.post p{
+  font-size: 1rem;
+  line-height: 2;
+}
+```
+이러한 작업을 하고 기사를 보면 훨씬 더 나은 모습일 것이다.
+![image](https://user-images.githubusercontent.com/48292190/114804176-d876e000-9ddb-11eb-8a71-b5af7fa3cd96.png)
+
+오케이, 이제 제목을 조금 더 꾸며보도록 하자.
+```css
+.post h1{
+  padding-left : .5rem;
+  border-left: solid .65rem var(--accent-color);
+  font-size: 2rem;
+}
+```
+
+어릴 때, 글만 있는 책을 보면 정말 지루했었는데 그때마다 그림이 정말 고마웠다. 그래서 이번에는 **사진을 넣어보도록 하자.** 
+
+![image](https://user-images.githubusercontent.com/48292190/114805053-453eaa00-9ddd-11eb-8158-34b0194057e9.png)
+
+굳! 사진을 넣으니 훨씬 글이 영양가 있어졌다. 이때, 사진의 최대 크기는 콘텐츠의 크기와 동일해야 되는데,
+```css
+.post img{
+  max-width: 100%;
+}
+```
+이렇게만 해주면 알아서 최대크기가 설정된다.

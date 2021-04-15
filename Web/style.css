@@ -14,6 +14,23 @@
   --gray-color : #ddd;
 }
 
+@media (max-width : 599px) {
+  :root{
+    font-size: 14px;
+  }
+}
+
+@media (min-width : 600px) and (max-width: 799px) {
+  :root{
+    font-size: 16px;
+  }
+}
+@media (min-width : 800px) {
+  :root{
+    font-size: 16px;
+  }
+}
+
 /* 기본 설정 : 페이지 전체 */
 body {
   margin: 0;
@@ -436,4 +453,17 @@ header {
   max-width: var(--middle-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+.post h1{
+  padding-left : .5rem;
+  border-left: solid .65rem var(--accent-color);
+  font-size: 2rem;
+}
+.post p{
+  font-size: 1rem;
+  line-height: 2;
+}
+.post img{
+  max-width: 100%;
 }
