@@ -9,24 +9,24 @@
   --icon-color: #fff;
   --icon-bk-color: #ddd;
   --large-width: 1000px;
-  --middle-width : 800px;
+  --middle-width: 800px;
   --purple-color: #a388f3;
-  --gray-color : #ddd;
+  --gray-color: #ddd;
 }
 
-@media (max-width : 599px) {
-  :root{
+@media (max-width: 599px) {
+  :root {
     font-size: 14px;
   }
 }
 
-@media (min-width : 600px) and (max-width: 799px) {
-  :root{
+@media (min-width: 600px) and (max-width: 799px) {
+  :root {
     font-size: 16px;
   }
 }
-@media (min-width : 800px) {
-  :root{
+@media (min-width: 800px) {
+  :root {
     font-size: 16px;
   }
 }
@@ -367,7 +367,7 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.nohero header{
+.nohero header {
   position: static;
   border-bottom: 1px solid var(--gray-color);
 }
@@ -439,31 +439,54 @@ header {
     display: none;
   }
 }
-@media (min-width : 768px) {
-  .headC{
+@media (min-width: 768px) {
+  .headC {
     display: none;
   }
-  .headB{
+  .headB {
     display: block !important;
   }
 }
 
 .post .container {
-  padding : 30px 10px;
+  padding: 30px 10px;
   max-width: var(--middle-width);
   margin-left: auto;
   margin-right: auto;
 }
 
-.post h1{
-  padding-left : .5rem;
-  border-left: solid .65rem var(--accent-color);
+.post h1 {
+  padding-left: 0.5rem;
+  border-left: solid 0.65rem var(--accent-color);
   font-size: 2rem;
 }
-.post p{
+.post p {
   font-size: 1rem;
   line-height: 2;
 }
-.post img{
+.post img {
   max-width: 100%;
+}
+
+.bread ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.bread a {
+  display: block;
+  padding: 5px;
+  color: inherit;
+  font-size: 0.875px;
+  text-decoration: none;
+}
+.bread a::after {
+  margin-left: 10px;
+  content: ">";
+  font-family: "FontAwesome";
+  opacity: 0.3;
+}
+.bread a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
