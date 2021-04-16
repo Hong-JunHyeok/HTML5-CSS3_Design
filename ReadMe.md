@@ -17,7 +17,7 @@ _틀린 내용이나 오타가 있으면 PR을 날려주세요! 적극 검토하
 - [최상위 페이지 만들기](#최상위-페이지-만들기)
 - [콘텐츠 페이지 만들기](#콘텐츠-페이지-만들기)
 - [기사 목록 페이지 만들기](#기사-목록-페이지-만들기)
-- **디자인 재구성** (준비중)
+- [디자인 재구성](#디자인-재구성)
 
 ## 사전 준비
 
@@ -558,6 +558,7 @@ header {
   </div>
 </section>
 ```
+
 히어로 이미지 section에 compact라는 클래스 속성을 추가해서 css에 다음과 같은 작업을 해주도록 하자.
 
 ```css
@@ -569,6 +570,83 @@ header {
   background-position: center;
 }
 ```
+
 이러면 기존에 conA에 있던 css속성에서 덮어쓰기가 되어서 스타일이 적용된다.
 
 이제 페이지의 템플릿을 만들었으니, 기사 개요를 출력하는 방법에 대해서 알아보도록 하자.
+
+### 카드 뷰 만들기
+
+![image](https://user-images.githubusercontent.com/48292190/114979129-4b0fba80-9ec5-11eb-8349-9d01480ecf0b.png)
+
+카드 뷰를 만들때에는 background-image를 조금 다른 방식으로 줄까 한다.
+
+```html
+<div
+  class="photo"
+  style="
+                background-image: url(http://flamingotiger.github.io/image/thumb/react-thumb.jpg);
+              "
+></div>
+```
+
+이런식으로 `style`이라는 속성을 사용해서 주소를 대입하는 형식이다.
+각 카드뷰마다 이미지가 다를텐데, 그때마다 각 클래스를 파서 css에 `background-image`를 주고... 그런 작업은 효율작인 작업은 아닌것 같다. 그래서 **사용하는 방법이 `background-image`를 style에 박아버리는 방법이다.**
+
+```html
+<article>
+  <a href="#">
+    <div
+      class="photo"
+      style="
+                background-image: url(http://flamingotiger.github.io/image/thumb/react-thumb.jpg);
+              "
+    ></div>
+    <div class="text">
+      <h2>React스러운 상태관리 라이브러리 :: Recoil</h2>
+      <p>
+        비교적 간단한 프로젝트엔 무겁게 느껴질 수 있는 Redux와 MobX, 그리고
+        이들은 근본적으로 React를 위해 출시된 것이 아니었습니다...
+      </p>
+    </div>
+  </a>
+</article>
+```
+
+```css
+.listA .photo {
+  min-height: 150px;
+  background-position: center;
+  background-size: cover;
+}
+
+.listA h2 {
+  font-size: 18px;
+}
+.listA p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+.listA a {
+  margin: 10px;
+  display: block;
+  border: 1px solid var(--gray-color);
+  color: inherit;
+  text-decoration: none;
+}
+
+.listA a:hover {
+  opacity: 0.8;
+}
+
+.listA .text {
+  margin: 10px;
+}
+```
+
+이런식으로 작성하게 된다면 생각보다 볼만한 카드뷰가 나오게 된다. 마우스를 오버했을때, opacity가 바뀌는 작업까지 해주었다.
+추후에 article을 늘리는 작업을 하고 싶다면, 그냥 복붙하고 제목 , 내용 , 이미지를 바꿔주면 된다.
+
+![image](https://user-images.githubusercontent.com/48292190/114980523-8e6b2880-9ec7-11eb-8a4d-243026d9d87e.png)
+
+# 디자인 재구성
