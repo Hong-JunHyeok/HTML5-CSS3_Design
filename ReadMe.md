@@ -5,7 +5,7 @@
 > 너무 js에만 집착하다 보니 웹에 기초가 되는 HTML, 그리고 CSS를 너무 대충하지 않았나...
 > 하는 생각을 하게 되었는데 그때에 나를 반성하고자, 그리고 변해보고자 이 [**최신 표준 HTML5+CSS3 디자인**] 를 읽어보면서 기초를 탄탄히 다지는 시간이 되었으면 좋겠다.
 
-*틀린 내용이나 오타가 있으면 PR을 날려주세요! 적극 검토하겠습니다!*
+_틀린 내용이나 오타가 있으면 PR을 날려주세요! 적극 검토하겠습니다!_
 
 ## 결과물
 
@@ -16,7 +16,7 @@
 - [사전 준비](#사전-준비)
 - [최상위 페이지 만들기](#최상위-페이지-만들기)
 - [콘텐츠 페이지 만들기](#콘텐츠-페이지-만들기)
-- **기사 목록 페이지 만들기** (준비중)
+- [기사 목록 페이지 만들기](#기사-목록-페이지-만들기)
 - **디자인 재구성** (준비중)
 
 ## 사전 준비
@@ -247,36 +247,42 @@ max-width의 속성을 --large-width의 값으로 설정을 해주었고,
       });
 </script>
 ```
+
 이렇게 하였을때 메뉴가 토글이 될것이다.
 
 ![gif](https://im7.ezgif.com/tmp/ezgif-7-3889679888aa.gif)
 
 여기서 중요한 것은 **반응형 작업**이다.
-왜냐하면 버튼을 큰 화면일때에는 없애야하기 때문이다. 
+왜냐하면 버튼을 큰 화면일때에는 없애야하기 때문이다.
 
-headB에 있는 네비게이션들을 작은 화면일때 `display: none`을 해준다. 그런 다음에 토글 버튼이 클릭이 되었을때에, 
+headB에 있는 네비게이션들을 작은 화면일때 `display: none`을 해준다. 그런 다음에 토글 버튼이 클릭이 되었을때에,
+
 ```javascript
 $(function () {
-        $(".headC").click(function () {
-          $(".headB").slideToggle();
-        });
-      });
+  $(".headC").click(function () {
+    $(".headB").slideToggle();
+  });
+});
 ```
+
 이부분 처럼 slideToggle이라는 함수를 실행시켜주면 JQuery에서 자동으로 `display : none`이 되었던 부분을 슬라이드 하는 애니메이션으로 변환시켜 주면서 화면에 보여지게 된다.
 
 # 콘텐츠 페이지 만들기
 
-### 페이지 디자인 
+### 페이지 디자인
+
 하나의 사이트를 구성하는 페이지이므로 통일감 있게 디자인하는 것이 좋다.
 
-## 콘텐츠 페이지 
+## 콘텐츠 페이지
+
 콘텐츠 페이지는 기사을 보여주는 것을 목적으로 하는 페이지이다.
 콘텐츠 페이지의 구성 요소는 보통 **기사의 제목 , 문장 , 이미지, 빵 부스러기 리스트 등이 있다**
 
 > **빵 부스러기 리스트란?**
-서양 동화의 헨젤과 그레텔에서 다시 집으로 돌아가기 위해 빵을 조금씩 뜯어 놓아서 왔던 길을 기록하는 모습을 보고 나온 이름으로, 웹페이지에서 사용자가 방문한 페이지를 기록하는 리스트를 빵 부스러기 리스트라고 한다.
+> 서양 동화의 헨젤과 그레텔에서 다시 집으로 돌아가기 위해 빵을 조금씩 뜯어 놓아서 왔던 길을 기록하는 모습을 보고 나온 이름으로, 웹페이지에서 사용자가 방문한 페이지를 기록하는 리스트를 빵 부스러기 리스트라고 한다.
 
 ### 헤더가 제목과 겹치는 상황 발생
+
 ![image](https://user-images.githubusercontent.com/48292190/114801903-a2cff800-9dd7-11eb-84c2-a879e1ed333b.png)
 
 위의 사진처럼 헤더가 콘텐츠와 겹치는 경우가 발생한다. 이는 `position : absolute;`라는 속성 때문인데, 일차적으로 해결하기 위해서는 absolute속성을 없애줘야 한다.
@@ -298,12 +304,13 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.nohero header{
+.nohero header {
   position: static;
 }
 ```
 
 그리고 nohero 헤더 속성에 구분선을 줘서 콘텐츠와 거리를 주도록 해보겠다.
+
 ```css
 /* 기본 색상 */
 :root {
@@ -315,29 +322,32 @@ header {
   --icon-bk-color: #ddd;
   --large-width: 1000px;
   --purple-color: #a388f3;
-  --gray-color : #ddd;
+  --gray-color: #ddd;
 }
 
 /* 생략 */
 
-.nohero header{
+.nohero header {
   position: static;
   border-bottom: 1px solid var(--gray-color);
 }
 ```
 
 ### 기사의 간격 설정하기
+
 먼저 기사 주변의 여백 크기를 조정해보도록 하겠다.
+
 ```css
 .post .container {
-  padding : 30px 10px;
+  padding: 30px 10px;
 }
 ```
 
 그런 다음에 max-width를 줘서 최대 길이를 주도록 하겠다.
+
 ```css
 .post .container {
-  padding : 30px 10px;
+  padding: 30px 10px;
   max-width: var(--middle-width);
   margin-left: auto;
   margin-right: auto;
@@ -361,60 +371,66 @@ header {
 > 2rem은 root폰트 크기 x 2가 되는것이다.
 
 ```css
-@media (max-width : 599px) {
-  :root{
+@media (max-width: 599px) {
+  :root {
     font-size: 14px;
   }
 }
 
-@media (min-width : 600px) and (max-width: 799px) {
-  :root{
+@media (min-width: 600px) and (max-width: 799px) {
+  :root {
     font-size: 16px;
   }
 }
-@media (min-width : 800px) {
-  :root{
+@media (min-width: 800px) {
+  :root {
     font-size: 16px;
   }
 }
 ```
-미디어 쿼리를 사용해서 root폰트 크기를 변경한 것이다. 
+
+미디어 쿼리를 사용해서 root폰트 크기를 변경한 것이다.
 그리고 line-height를 조금 수정해 보도록 하자.
 
 ```css
-.post h1{
+.post h1 {
   font-size: 2rem;
 }
-.post p{
+.post p {
   font-size: 1rem;
   line-height: 2;
 }
 ```
+
 이러한 작업을 하고 기사를 보면 훨씬 더 나은 모습일 것이다.
 ![image](https://user-images.githubusercontent.com/48292190/114804176-d876e000-9ddb-11eb-8a71-b5af7fa3cd96.png)
 
 오케이, 이제 제목을 조금 더 꾸며보도록 하자.
+
 ```css
-.post h1{
-  padding-left : .5rem;
-  border-left: solid .65rem var(--accent-color);
+.post h1 {
+  padding-left: 0.5rem;
+  border-left: solid 0.65rem var(--accent-color);
   font-size: 2rem;
 }
 ```
 
-어릴 때, 글만 있는 책을 보면 정말 지루했었는데 그때마다 그림이 정말 고마웠다. 그래서 이번에는 **사진을 넣어보도록 하자.** 
+어릴 때, 글만 있는 책을 보면 정말 지루했었는데 그때마다 그림이 정말 고마웠다. 그래서 이번에는 **사진을 넣어보도록 하자.**
 
 ![image](https://user-images.githubusercontent.com/48292190/114805053-453eaa00-9ddd-11eb-8158-34b0194057e9.png)
 
 굳! 사진을 넣으니 훨씬 글이 영양가 있어졌다. 이때, 사진의 최대 크기는 콘텐츠의 크기와 동일해야 되는데,
+
 ```css
-.post img{
+.post img {
   max-width: 100%;
 }
 ```
+
 이렇게만 해주면 알아서 최대크기가 설정된다.
 
 ### 빵 부스러기 리스트 출력
+
 이름이..정말 맘에 안들지만 일단 해보도록 하겠다.
 ![image](https://user-images.githubusercontent.com/48292190/114808956-40c9bf80-9de4-11eb-9b57-43aba142fa3a.png)
 
@@ -442,72 +458,117 @@ header {
   background-color: rgba(0, 0, 0, 0.3);
 }
 ```
+
 빵 부스러기 리스트를 다 만들었으니 다음 페이지를 만들어보자.
 **(책의 내용상 지금 만드는게 소개 페이지라서 바꿨습니다...)**
 
-### 소개 페이지 만들기 
+### 소개 페이지 만들기
 
 기존에 있던 빵 부스러기 리스트를 지우고 작업을 합니다.
 
 소개 페이지의 테이블은 `반응형`으로 작업했으며 flex레이아웃을 사용했다.
 
 ```css
-.history{
+.history {
   background-color: var(--main-color);
   color: var(--text-bright-color);
 }
 
-.history .text{
-  padding :20px;
+.history .text {
+  padding: 20px;
 }
 
-.history h2{
+.history h2 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
 
-.history .photo{
+.history .photo {
   min-height: 300px;
   background-image: url(img/article_1.jpeg);
   background-position: center;
   background-size: cover;
 }
 
-.history table{
-  border-collapse: collapse;  
+.history table {
+  border-collapse: collapse;
   border-top: 1px solid var(--gray-color);
   font-size: 0.875rem;
 }
 .history th,
-.history td{
-  padding : 1.8rem 0;
+.history td {
+  padding: 1.8rem 0;
   border-bottom: 1px solid var(--gray-color);
 }
 
-.history th{
+.history th {
   padding-right: 1rem;
   text-align: left;
   word-break: keep-all;
 }
 
 /* 반응형 */
-@media (min-width : 768px) {
-  .history .container{
+@media (min-width: 768px) {
+  .history .container {
     display: flex;
     max-width: var(--large-width);
     margin-left: auto;
     margin-right: auto;
   }
-  .history .photo{
-    flex : 3;
+  .history .photo {
+    flex: 3;
   }
-  .history .text{
-    flex : 2;
-    padding : 50px;
+  .history .text {
+    flex: 2;
+    padding: 50px;
   }
 }
-
 ```
 
 ![image](https://user-images.githubusercontent.com/48292190/114839137-640a6400-9e10-11eb-9d47-4c23bd18e4d5.png)
+
+## 문의 페이지 만들기
+
+![image](https://user-images.githubusercontent.com/48292190/114871807-a47bd900-9e34-11eb-8c0a-45fafc6ef82b.png)
+
+### 이제 구글 지도를 추가하는 방법을 보도록 하겠습니다.
+
+![image](https://user-images.githubusercontent.com/48292190/114873868-b52d4e80-9e36-11eb-9d30-6b1f01770dc1.png)
+
+이렇게 구글 지도에 들어가서 공유를 누르고 지도 퍼가기를 클릭한 다음에 HTML복사를 한 다음,
+원하는 위치에 복사한 HTML을 붙여넣으면 완성된다.
+![image](https://user-images.githubusercontent.com/48292190/114874275-24a33e00-9e37-11eb-8b9d-06ea91216760.png)
+
+이제 지도에 제목을 추가해서 스타일링을 마무리 하도록 하겠다.
+
+## 기사 목록 페이지 만들기
+
+기사 목록 페이지는 기사 개요를 나열하는 페이지다.
+최상위 페이지 기반으로 만들 것이며, 3개의 패턴(레이아웃)을 나눠서 개발할것이다.
+
+최상위 페이지인 index.html를 복사한 다음에 list-a.html이라는 파일을 만들어서 히어로 이미지를 제외한 나머지 부분들을
+전부 제거하는 작업을 해주면 된다.
+
+```html
+<section class="conA compact">
+  <div class="container">
+    <h1>Hong-JunHyeok</h1>
+    <p>개발은 곧 모험이다. 개발자 홍준혁입니다.</p>
+  </div>
+</section>
+```
+히어로 이미지 section에 compact라는 클래스 속성을 추가해서 css에 다음과 같은 작업을 해주도록 하자.
+
+```css
+.conA.compact {
+  height: 450px;
+  min-height: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(img/article_2.jpg);
+  background-position: center;
+}
+```
+이러면 기존에 conA에 있던 css속성에서 덮어쓰기가 되어서 스타일이 적용된다.
+
+이제 페이지의 템플릿을 만들었으니, 기사 개요를 출력하는 방법에 대해서 알아보도록 하자.
