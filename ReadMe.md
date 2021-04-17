@@ -660,14 +660,37 @@ header {
   > **헤더를 화면 위에 고정하기** > `position : fixed`라는 속성을 사용하게 되면, 헤더가 스크롤 되지 않고 그대로 화면에 남아있는다.
 
   ```css
-  .head-fixed, .nohero .head-fixed{
-    position:fixed;
+  .head-fixed,
+  .nohero .head-fixed {
+    position: fixed;
   }
-  .nohero .head-fixed + *{
+  .nohero .head-fixed + * {
     margin-top: 70px;
   }
   ```
 
-- ## 콘텐츠 페이지 재구성
 - ## 기본 색상 재구성
-```
+
+  > **페이지의 기본색 재구성하기**
+  > 페이지의 기본색을 바꾸기 위해서는 변수의 값만 바꾸면 된다. 만약, 변수를 안쓰고 일일이 헥스코드를 입력했었으면...엄청 끔찍한 일이 일어났을 것이다.
+
+  ```css
+  /* 기본 색상 */
+  :root {
+    --main-color: #a7304f;
+    --accent-color: #b4ac46;
+    --dark-main-color: #5a1124;
+    --text-bright-color: #fff;
+    --icon-color: #fff;
+    --icon-bk-color: #ddd;
+    --large-width: 1000px;
+    --middle-width: 800px;
+    --purple-color: #a388f3;
+    --gray-color: #ddd;
+  }
+  ```
+
+  이렇게 색을 바꾸고 바뀐 웹사이트를 한번 보면,
+  ![image](https://user-images.githubusercontent.com/48292190/115103681-c8ebc880-9f8e-11eb-9df3-6a358b3340e5.png)
+
+  변수만 바꿔도 **전역적으로 색이 바뀐 모습**을 볼 수 있다.

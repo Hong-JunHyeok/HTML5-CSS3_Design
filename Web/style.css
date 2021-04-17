@@ -2,9 +2,9 @@
 
 /* 기본 색상 */
 :root {
-  --main-color: #5d9ab2;
-  --accent-color: #bf6a7a;
-  --dark-main-color: #2b5566;
+  --main-color: #a7304f;
+  --accent-color: #b4ac46;
+  --dark-main-color: #5a1124;
   --text-bright-color: #fff;
   --icon-color: #fff;
   --icon-bk-color: #ddd;
@@ -773,11 +773,11 @@ header {
 .listC .container{
   display: flex;
   flex-wrap: wrap;
-  /* max-width: var(--large-width); */
+  max-width: var(--large-width);
   margin: 30px auto;
 }
 .listC article{
-  flex : 1 1 250px;
+  flex : 0 0 250px;
   display: flex;
 }
 
