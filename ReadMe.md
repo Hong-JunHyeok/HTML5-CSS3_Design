@@ -650,3 +650,24 @@ header {
 ![image](https://user-images.githubusercontent.com/48292190/114980523-8e6b2880-9ec7-11eb-8a4d-243026d9d87e.png)
 
 # 디자인 재구성
+
+- ## 헤더 재구성
+
+  > **색을 재구성한 헤더** > ![image](https://user-images.githubusercontent.com/48292190/114984876-1dc70a80-9ecd-11eb-943d-0c59af17c54f.png)
+
+  > **헤더와 히어로 이미지를 하나로 디자인하기** > ![image](https://user-images.githubusercontent.com/48292190/114985483-d1c89580-9ecd-11eb-8c2f-43f506970028.png) > `background-color : transparent` => 투명한 색
+
+  > **헤더를 화면 위에 고정하기** > `position : fixed`라는 속성을 사용하게 되면, 헤더가 스크롤 되지 않고 그대로 화면에 남아있는다.
+
+  ```css
+  .head-fixed, .nohero .head-fixed{
+    position:fixed;
+  }
+  .nohero .head-fixed + *{
+    margin-top: 70px;
+  }
+  ```
+
+- ## 콘텐츠 페이지 재구성
+- ## 기본 색상 재구성
+```

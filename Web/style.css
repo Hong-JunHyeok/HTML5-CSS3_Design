@@ -375,6 +375,30 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+.head-hero{
+  background-color: transparent;
+  color: var(--text-bright-color);
+}
+
+.head-fixed, .nohero .head-fixed{
+  position:fixed;
+}
+
+.nohero .head-fixed + *{
+  margin-top: 70px;
+}
+
+.head-hero .headA{
+  background-color: transparent;
+  color: inherit;
+}
+
+@media (max-width: 767px){
+  .head-hero .headB{
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
 .nohero header {
   position: static;
   border-bottom: 1px solid var(--gray-color);
