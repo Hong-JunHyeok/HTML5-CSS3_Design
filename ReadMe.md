@@ -997,6 +997,89 @@ h3 {
   :first-child { ... }
   ```
 
+## 미디어 쿼리
+
+@media ( ~ )에서 지정한 조건이 만족할 때만 CSS설정을 적용한다.
+```css
+@media (<특성 이름> : <속성 값>){
+  /* CSS 설정을 작성합니다. */
+}
+```
+만약 넓이로 한다면 width , max-width , min-width 등의 특성 이름을 조건으로 지정한다.
+
+```css
+@media (mix-width : 1000px){
+  /* 브라우저의 넓이가 1000px이상일때 실행할 CSS코드 */
+}
+```
+## 박스 모델
+
+웹 페이지에서 HTML로 마크업한 콘텐츠마다 박스라는 것이 만들어진다.
+
+박스의 구조는 
+![image](http://codingschool.info/content/css/box_model/img/8-1.png)
+이렇게 이루어져 있다.
+
+### 박스의 기본 설정 
+박스의 기본 설정을 조정할 때 사용하는 속성이다.
+- **margin / padding**
+> margin은 테두리 외부 , padding은 테두리 안쪽의 여백 크기를 지정한다.
+```css
+margin : 위 아래 왼쪽 오른쪽
+margin : 위 아래 , 왼족 오른쪽 
+margin : 위, 왼쪽 오른쪽, 아래
+margin : 위, 오른쪽 , 아래, 왼쪽
+
+혹은 
+
+margin-bottom, margin-top과 같은 속성을 사용할 수도 있음
+```
+- **width / height**
+> width와 height로 콘텐츠 박스의 너비와 높이를 지정할 수 있다.
+```css
+box-sizing: border-box 를 지정하게 되면 테두리 박스의 너비와 높이를 지정할 수 있다.
+```
+- **border**
+> 테두리의 디자인을 지정할 때 사용됩니다.
+```css
+border : 종류 두께 색; 
+
+위, 아래 , 오른쪽 , 왼쪽 테두리를 개별적으로 지정하고 싶으면
+border-bottom , border-left과 같은 속성을 사용할 수도 있음
+```
+
+- **background-image**
+> background-image는 배경 이미지를 지정한다.
+- **background-color**
+> 배경 색을 지정한다.
+- **background**
+> 배경색과 이미지를 한꺼번에 지정할 수 있다.
+- **background-size**
+> 배경 이미지가 출력되는 크기를 지정한다. 
+> cover , contain 등...
+- **background-position**
+> 이미지를 자르는 위치를 지정한다.
+```css
+background-position : left top; /*왼쪽 위*/
+background-position : center; /*가운데*/
+```
+- **border-radius**
+> 박스의 각 둥글기를 지정한다.
+```css
+border-radius : <각 둥글기의 반경>;
+```
+- **box-shadow**
+> 박스에 그림자 디자인을 지정한다.
+```css
+box-shadow : 가로 세로 블러 스프레드 색
+```
+- **opacity**
+> 박스의 투명도를 지정한다.
+```css
+opacity : <투명도>;
+```
+
+
 ## 최적화
 
 ```
