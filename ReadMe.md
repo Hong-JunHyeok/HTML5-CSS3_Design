@@ -920,195 +920,305 @@ h3 {
 이렇게 사용하면 된다.
 
 ## CSS에서 매우 중요한 부분중 하나인 선택자.
+
 - 태그 선택자
-  
+
   **지정한 이름의 요소를 적용 대상으로 한다.**
+
   ```css
-  h1 { ... }
+  h1 {
+    ...;
+  }
   ```
 
 - 클래스 선택자
 
   **지정한 클래스 이름을 가진 요소를 적용 대상으로 한다.**
+
   ```css
-  .classA { ... }
+  .classA {
+    ...;
+  }
   ```
 
 - 전체 선택자
 
   **모든 요소를 적용 대상으로 지정한다.**
+
   ```css
-  * { ... }
+  * {
+    ...;
+  }
   ```
 
 - 부정 선택자
 
   **지정한 조건과 일치하지 않는 요소를 적용 대상으로 한다.**
+
   ```css
-  :not( ~ ){ ... }
+  :not(~) {
+    ...;
+  }
   ```
 
 - 의사요소 선택자
 
   **요소 앞뒤에 콘텐츠를 넣기 위한 선택자**
+
   ```css
-  ::before{}
-  ::after{}
+  ::before {
+  }
+  ::after {
+  }
   ```
 
 - :root 선택자
 
   **루트 요소인 `<html>`을 적용하기 위한 선택자**
+
   ```css
-  :root{ ... }
+  :root {
+    ...;
+  }
   ```
 
 - 반응 선택자
 
   **커서를 올린 요소를 적용 대상으로 한다.**
+
   ```css
-  :hover{ ... }
+  :hover {
+    ...;
+  }
   ```
 
 - 후손 선택자
 
   **A 내부 요소의 B요소를 적용 대상으로 한다.**
+
   ```css
-  A B { ... }
+  A B {
+    ...;
+  }
   ```
+
   ```html
-  <A><B></B></A>
+  <a><b></b></a>
   ```
 
 - 인접 선택자
 
   **A 요소 뒤에있는 B 요소를 적용 대상으로 한다.**
+
   ```css
-  A + B { ... }
+  A + B {
+    ...;
+  }
   ```
+
   ```html
-  <A></A><B></B>
+  <a></a><b></b>
   ```
 
 - :first-child 유사 선택자
 
   **같은 단계의 첫 번째 요소를 적용 대상으로 한다.**
+
   ```css
-  :first-child { ... }
+  :first-child {
+    ...;
+  }
   ```
 
 ## 미디어 쿼리
 
 @media ( ~ )에서 지정한 조건이 만족할 때만 CSS설정을 적용한다.
+
 ```css
-@media (<특성 이름> : <속성 값>){
+@media (<특성 이름>: <속성 값>) {
   /* CSS 설정을 작성합니다. */
 }
 ```
+
 만약 넓이로 한다면 width , max-width , min-width 등의 특성 이름을 조건으로 지정한다.
 
 ```css
-@media (mix-width : 1000px){
+@media (mix-width: 1000px) {
   /* 브라우저의 넓이가 1000px이상일때 실행할 CSS코드 */
 }
 ```
+
 ## 박스 모델
 
 웹 페이지에서 HTML로 마크업한 콘텐츠마다 박스라는 것이 만들어진다.
 
-박스의 구조는 
+박스의 구조는
 ![image](http://codingschool.info/content/css/box_model/img/8-1.png)
 이렇게 이루어져 있다.
 
-### 박스의 기본 설정 
+### 박스의 기본 설정
+
 박스의 기본 설정을 조정할 때 사용하는 속성이다.
+
 - **margin / padding**
-> margin은 테두리 외부 , padding은 테두리 안쪽의 여백 크기를 지정한다.
+  > margin은 테두리 외부 , padding은 테두리 안쪽의 여백 크기를 지정한다.
+
 ```css
 margin : 위 아래 왼쪽 오른쪽
-margin : 위 아래 , 왼족 오른쪽 
+margin : 위 아래 , 왼족 오른쪽
 margin : 위, 왼쪽 오른쪽, 아래
 margin : 위, 오른쪽 , 아래, 왼쪽
 
-혹은 
+혹은
 
 margin-bottom, margin-top과 같은 속성을 사용할 수도 있음
 ```
+
 - **width / height**
-> width와 height로 콘텐츠 박스의 너비와 높이를 지정할 수 있다.
+  > width와 height로 콘텐츠 박스의 너비와 높이를 지정할 수 있다.
+
 ```css
-box-sizing: border-box 를 지정하게 되면 테두리 박스의 너비와 높이를 지정할 수 있다.
+box-sizing: border-box 를 지정하게 되면 테두리 박스의 너비와 높이를 지정할 수
+  있다.;
 ```
+
 - **border**
-> 테두리의 디자인을 지정할 때 사용됩니다.
+  > 테두리의 디자인을 지정할 때 사용됩니다.
+
 ```css
-border : 종류 두께 색; 
+border : 종류 두께 색;
 
 위, 아래 , 오른쪽 , 왼쪽 테두리를 개별적으로 지정하고 싶으면
 border-bottom , border-left과 같은 속성을 사용할 수도 있음
 ```
 
 - **background-image**
-> background-image는 배경 이미지를 지정한다.
+  > background-image는 배경 이미지를 지정한다.
 - **background-color**
-> 배경 색을 지정한다.
+  > 배경 색을 지정한다.
 - **background**
-> 배경색과 이미지를 한꺼번에 지정할 수 있다.
+  > 배경색과 이미지를 한꺼번에 지정할 수 있다.
 - **background-size**
-> 배경 이미지가 출력되는 크기를 지정한다. 
-> cover , contain 등...
+  > 배경 이미지가 출력되는 크기를 지정한다.
+  > cover , contain 등...
 - **background-position**
-> 이미지를 자르는 위치를 지정한다.
+  > 이미지를 자르는 위치를 지정한다.
+
 ```css
-background-position : left top; /*왼쪽 위*/
-background-position : center; /*가운데*/
-```
-- **border-radius**
-> 박스의 각 둥글기를 지정한다.
-```css
-border-radius : <각 둥글기의 반경>;
-```
-- **box-shadow**
-> 박스에 그림자 디자인을 지정한다.
-```css
-box-shadow : 가로 세로 블러 스프레드 색
-```
-- **opacity**
-> 박스의 투명도를 지정한다.
-```css
-opacity : <투명도>;
+background-position: left top; /*왼쪽 위*/
+background-position: center; /*가운데*/
 ```
 
-## 박스의 종류 
-박스의 종류
-- 블록 박스
+- **border-radius**
+  > 박스의 각 둥글기를 지정한다.
+
 ```css
-display : block;
+border-radius: <각 둥글기의 반경>;
 ```
-> 블록박스는 줄바꿈이 들어간다. 
-부모 요소의 넓이를 꽉 채워 출력한다.
+
+- **box-shadow**
+  > 박스에 그림자 디자인을 지정한다.
+
+```css
+box-shadow: 가로 세로 블러 스프레드 색;
+```
+
+- **opacity**
+  > 박스의 투명도를 지정한다.
+
+```css
+opacity: <투명도>;
+```
+
+## 박스의 종류
+
+박스의 종류
+
+- 블록 박스
+
+```css
+display: block;
+```
+
+> 블록박스는 줄바꿈이 들어간다.
+> 부모 요소의 넓이를 꽉 채워 출력한다.
 
 - 인라인 박스
+
 ```css
-display : inline;
+display: inline;
 ```
+
 > 인라인 박스는 앞뒤에 줄바꿈이 들어가지 않고, 내용에 맞는 너비를 가지는 것이 특징이다.
 > 그리고 width, height,margin 등이 안먹힌다.
+
 - 인라인 블록 박스
+
 ```css
-display : inline-block;
+display: inline-block;
 ```
+
 > 인라인 박스와 같지만, width와 height로 너비와 높이를 지정할 수 있으며, margin으로 위아래 마진또한 할 수 있다.
-- 박스를 구성하지 않음 
+
+- 박스를 구성하지 않음
+
 ```css
-display : none;
+display: none;
 ```
+
 > none속성은 박스를 구성하지 않는 상태가 된다.
 
-<!-- ## 플렉시블 박스 레이아웃 -->
+## 플렉시블 박스 레이아웃
+
+**플렉스 박스 레이아웃은?**
+박스의 정렬 상태와 너비/높이를 유연하게 조정할 수 있는 레이아웃 모드이다.
+
+부모 요소를 `display : flex`를 하게되면 "플렉스 레이아웃 모드"로 적용되서 자식 요소들이 가로로 정렬이 된다.
+
+```html
+<div class="container">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+```
+
+만약 container를 플렉스 레이아웃을 적용했다면 container는 **플렉스 컨테이너**라고 불리며, 각 item들은 **플렉스 아이템**이라고 부른다.
+
+```css
+flex : 확대비율 축소비율 기본너비
+```
+
+## 포지션 레이아웃
+
+박스를 다른 레이어에 있는 것으로 취급해서 출력 위치를 조정할 때 사용하는 레이아웃 모드입니다.
+
+**포지션 레이아웃 모드**
+
+`position : absolute`를 하면 다른 레이어에 있는것으로 취급하여 다른 요소에 중첩된다.
+`fixed`페이지 스크롤에 영향을 받지 않는 포지션 레이아웃이다.
+
+## 박스 내부의 콘텐츠 디자인
+
+- color
+- font-family
+- font-size 
+- font-weight
+- letter-spacting
+- line-height
+- text-align
+- text-decoration
+- vertical-align
+  > **인라인 박스,인라인 블록박스의 정렬 위치를 지정한다.**
+- list-style
+- cursor
+- content
+- word-break
 
 ## 최적화
 
-```
+- HTML CSS 최적화
+  > HTML, CSS에서 의도치않은 공백은 데이터 용량을 줄일 수 있다. 
 
-```
+- 이미지 최적화
+  > 이미지의 원본 상태를 파괴하지 않고 용량을 줄일 수 있는 사이트가 있다.
